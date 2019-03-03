@@ -13,15 +13,15 @@ import com.javatechdeveloper.school.v1.service.cargo.Student;
 
 
 @RestController
-@RequestMapping(value="/grade", produces= MediaType.APPLICATION_JSON_VALUE, consumes= MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value="/school", produces= MediaType.APPLICATION_JSON_VALUE, consumes= MediaType.APPLICATION_JSON_VALUE)
 
 public class SchoolController {
-	@GetMapping
+	@GetMapping("/students")
 	public List<Student> getStudents(){
 		return null;	
 	}
 	
-	@GetMapping
+	@GetMapping("/staffs")
 	public List<Staff> getStaffs(){
 		return null;	
 	}
