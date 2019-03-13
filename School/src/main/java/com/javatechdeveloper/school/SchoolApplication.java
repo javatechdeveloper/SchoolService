@@ -11,11 +11,13 @@ import org.springframework.web.client.RestTemplate;
 public class SchoolApplication {
 
 	@Bean
-	 @LoadBalanced
+
+	@LoadBalanced
 	public RestTemplate restTemplate(RestTemplateBuilder builder) {
-	
-	   return builder.build();
+
+		return builder.build();
 	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(SchoolApplication.class, args);
 	}

@@ -1,5 +1,6 @@
 package com.javatechdeveloper.school.v1.service.endpoints;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,22 +18,22 @@ import com.javatechdeveloper.school.v1.service.cargo.StudentList;
 
 import lombok.Data;
 
-
-
 @RestController
-@RequestMapping(value="/school", produces= MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/school", produces = MediaType.APPLICATION_JSON_VALUE)
 @Data
 public class SchoolController {
+
 	@Autowired
 	private RestTemplate restTemplate;
-	
+
 	@GetMapping("/students")
-	public StudentList getStudents(){
-		return restTemplate.getForObject("http://Student-Service/api/student", StudentList.class);	
+	public StudentList getStudents() {
+		return restTemplate.getForObject("http://Student-Service/student", StudentList.class);
 	}
-	
+
 	@GetMapping("/staffs")
-	public StaffList getStaffs(){
-		return restTemplate.getForObject("http://Staff-Service/api/staff", StaffList.class);
+	public StaffList getStaffs() {
+		return restTemplate.getForObject("http://Staff-Service/staff", StaffList.class);
 	}
+
 }

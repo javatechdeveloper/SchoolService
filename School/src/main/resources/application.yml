@@ -1,11 +1,12 @@
 server:
-  servlet:
-    context-path: /api
-  port: 8084
+  port: 8085
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8089/eureka
+  instance:
+    hostname: localhost
 spring:
    application:
     name: School-Service
+    
